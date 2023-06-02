@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .gray-bg {
+        background-color: #ccc;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="gray-bg-checkbox" />
+    <div class="block">Блок 1</div>
+    <div class="block">Блок 2</div>
+    <div class="block">Блок 3</div>
+    <div class="block">Блок 4</div>
+    <script>
+      const grayBgCheckbox = document.getElementById("gray-bg-checkbox");
+      const blocks = document.querySelectorAll(".block");
+
+      if (grayBgCheckbox && blocks) {
+        grayBgCheckbox.addEventListener("change", function () {
+          for (let i = 0; i < blocks.length; i++) {
+            if (i % 2 === 0) {
+              blocks[i].classList.toggle("gray-bg");
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
